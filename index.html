@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport"content="width=device-width, initial-scale=1"/>
+	<title></title>
+	<script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+	<link href="css/index.css" rel="stylesheet" />
+</head>
+<body>
+	<div style="width: 300px;">
+	<div class="tab-box">
+		<a class="tangle-icon left"></a>
+		<a class="tangle-icon right"></a>
+		<ul><li><a>XXXa</a></li><li><a>XXXB</a></li><li><a>XXXC</a></li></ul>
+	</div>
+
+	<div class="menu" id="menu">
+		<i class="tangle-icon top"></i>
+		<ul>
+			<li class="fir-menu"><a><i class="circle"></i>XXXXX一级</a>
+				<div class="tb-ly">
+					<div class="tb-ly-la">
+						<div class="tb-cell"><span>第一阶段</span><em class="line"><i class="tangle"></i></em></div>
+						<div class="tb-cell">
+							<ul>
+								<li><a><i class="circle"></i>主任务</a>
+									<ul>	
+										<li><a><i class="circle"></i>子任务一</a></li>
+										<li><a><i class="circle"></i>子任务二</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="fir-menu"><a><i class="circle"></i>XXXXX二级</a>
+				<div class="tb-ly">
+					<div class="tb-ly-la">
+						<div class="tb-cell"><span>第二阶段</span><em class="line"><i class="tangle"></i></em></div>
+						<div class="tb-cell">
+							<ul>
+								<li><a><i class="circle"></i>主任务</a>
+									<ul>	
+										<li><a><i class="circle"></i>子任务一</a></li>
+										<li><a><i class="circle"></i>子任务二</a></li>
+										<li><a><i class="circle"></i>子任务三</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	</div>
+
+	<script type="text/javascript">
+		$(function(){
+			$('#menu').delegate("a","click",function(){
+				var $this = $(this);
+				if($this.parent().hasClass('fir-menu')){
+					if(!$this.siblings('.tb-ly').is(':hidden')){
+						$this.siblings('.tb-ly').slideUp(500);
+					}else{
+						$this.siblings('.tb-ly').slideDown(500);
+					}
+					
+				}else if($this.siblings('ul')){
+					console.log("aaa");
+					if(!$this.siblings('ul').is(':hidden')){
+						$this.siblings('ul').slideUp(500);
+					}else{
+						$this.siblings('ul').slideDown(500);
+					}
+				}
+			})
+		})
+	</script>
+</body>
+</html>
