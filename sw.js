@@ -1,10 +1,15 @@
 let CACHE_NAME = 'TESTCACHE'
+let pathname = '/' + window.location.pathname.replace(/\//g, '')
 let CACHE_LIST = [
-  '/Archive/index.html',
-  '/Archive/css/reset.css',
-  '/Archive/css/style.css',
-  '/Archive/js/index.js'
+  '/index.html',
+  '/css/reset.css',
+  '/css/style.css',
+  '/js/index.js'
 ]
+
+CACHE_LIST = CACHE_LIST.map((item) => {
+  return pathname + item
+})
 
 self.addEventListener('install', e => {
   e.waitUntil(
