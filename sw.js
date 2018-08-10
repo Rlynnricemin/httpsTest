@@ -1,5 +1,5 @@
 let CACHE_NAME = 'TESTCACHE'
-let pathname = '/' + window.location.pathname.replace(/\//g, '')
+let pathname = '/httpsTest'
 let CACHE_LIST = [
   '/index.html',
   '/css/reset.css',
