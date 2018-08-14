@@ -14,6 +14,7 @@
 
 var dataCacheName = 'weatherData-v1';
 var cacheName = 'weatherPWA-final-1';
+var path = '/final'
 var filesToCache = [
   '/',
   '/index.html',
@@ -33,7 +34,10 @@ var filesToCache = [
   '/images/thunderstorm.png',
   '/images/wind.png'
 ];
-
+filesToCache.map((item)=>{
+  item = path + item
+})
+console.log(filesToCache)
 self.addEventListener('install', function(e) {
   console.log('[ServiceWorker] Install');
   e.waitUntil(
