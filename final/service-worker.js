@@ -34,8 +34,8 @@ var filesToCache = [
   '/images/thunderstorm.png',
   '/images/wind.png'
 ];
-filesToCache.map((item)=>{
-  item = path + item
+filesToCache = filesToCache.map((item)=>{
+  return path + item
 })
 console.log(filesToCache)
 self.addEventListener('install', function(e) {
