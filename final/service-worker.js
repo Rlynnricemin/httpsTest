@@ -88,6 +88,7 @@ self.addEventListener('fetch', function(e) {
       caches.open(dataCacheName).then(function(cache) {
         return fetch(e.request).then(function(response){
           cache.put(e.request.url, response.clone());
+          console.log('[service response api]', response)
           return response;
         });
       })
@@ -100,6 +101,7 @@ self.addEventListener('fetch', function(e) {
      */
     e.respondWith(
       caches.match(e.request).then(function(response) {
+        console.log('[service response]', response)
         return response || fetch(e.request);
       })
     );
