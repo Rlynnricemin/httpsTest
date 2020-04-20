@@ -1,0 +1,32 @@
+<html><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather PWA</title>
+  <link rel="stylesheet" type="text/css" href="styles/inline.css">
+
+  <!-- TODO add manifest here -->
+  <link rel="manifest" href="./manifest.json">
+  <!-- Add to home screen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Weather PWA">
+  <link rel="apple-touch-icon" href="./images/icons/icon-152x152.png">
+  <meta name="msapplication-TileImage" content="./images/icons/icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#2F3BA2">
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vConsole/3.3.4/vconsole.min.js'></script>
+</head>
+<body>
+<p>测试上传1: <input type='file' onchange="" onchange="test(this, '测试1')"/></p>
+<p>测试上传2: <input type='file' accept="image/*" onchange="test(this, '测试2')"/></p>
+<p>测试上传3: <input type='file' accept="image/*" capture onchange="test(this, '测试3')"/></p>
+<script>
+  // 初始化
+  var vConsole = new VConsole();
+  function test(e, a) {
+     console.log(a, e.files[0])
+  }
+</script>
+</body>
+</html>
