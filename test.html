@@ -22,7 +22,7 @@
 <p>测试上传1: <input type='file' onchange="" onchange="test(this, '测试1')"/></p>
 <p>测试上传2: <input type='file' accept="image/*" onchange="test(this, '测试2')"/></p>
 <p>测试上传3: <input type='file' accept="image/*" capture onchange="test(this, '测试3')"/></p>
-<a onclikc="testPhone">测试通讯录</a>
+<a onclick="testPhone">测试通讯录</a>
 <script>
   // 初始化
   var vConsole = new VConsole();
@@ -30,6 +30,8 @@
      console.log(a, e.files[0])
   }
   function testPhone() {
+    console.log('my', my)
+    console.log('my.choosePhoneContact', my.choosePhoneContact)
     my.choosePhoneContact({
       success: (res) => {
         my.alert({
