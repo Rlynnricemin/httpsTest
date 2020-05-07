@@ -31,20 +31,21 @@
      console.log(a, e.files[0])
   }
   function testPhone() {
-    console.log('my', my)
-    console.log('my.choosePhoneContact', my.choosePhoneContact)
-    my.choosePhoneContact({
-      success: (res) => {
-        my.alert({
-          content: 'choosePhoneContact response: ' + JSON.stringify(res)
-        });
-      },
-      fail: (res) => {
-        my.alert({
-          content: 'choosePhoneContact response: ' + JSON.stringify(res)
-        });
-      },
-    });
+    wx.miniProgram.postMessage({ data: {foo: 'bar'} })
+//     console.log('my', my)
+//     console.log('my.choosePhoneContact', my.choosePhoneContact)
+//     my.choosePhoneContact({
+//       success: (res) => {
+//         my.alert({
+//           content: 'choosePhoneContact response: ' + JSON.stringify(res)
+//         });
+//       },
+//       fail: (res) => {
+//         my.alert({
+//           content: 'choosePhoneContact response: ' + JSON.stringify(res)
+//         });
+//       },
+//     });
   }
 </script>
 </body>
