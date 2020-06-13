@@ -30,6 +30,9 @@
   function test(e, a) {
      console.log(a, e.files[0])
   }
+  window.onhashchange = function() {
+    console.log(window.location.href)
+  }
   function testPhone() {
     wx.miniProgram.postMessage({ data: {foo: 'bar'} })
 //     console.log('my', my)
