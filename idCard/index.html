@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8"> 
+<title>菜鸟教程(runoob.com)</title> 
+</head>
+<body>
+
+<p>姓名：<input type='text' id="name"/></p>
+<p>身份证：<input type='text' id="idcard"/></p>
+<button onclick="loadImg()">生成</button>
+<img id="scream" src="./img/1.jpeg" alt="The Scream" width="634" height="402" style="display: none;"><p>Canvas:</p>
+<canvas id="myCanvas" width="634" height="402" style="border:1px solid #d3d3d3;"></canvas>
+
+<script>
+
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+var img=document.getElementById("scream");
+
+function loadImg() {
+	ctx.drawImage(img,0,0,634,402);
+	//绘制字体
+	ctx.font = '22px "黑体"';
+	ctx.fillStyle = "#000";
+	ctx.textBaseline = "top";
+	ctx.fillText(document.getElementById('name').value.replace(/(\W.*?)/g, '$1 '), 115, 57);
+	ctx.font = '20px "黑体"';
+	ctx.fillText(document.getElementById('idcard').value.replace(/(\d.*?)/g, '$1 '), 200, 333);
+
+	
+  var oA = document.createElement("a");
+	oA.download = '';// 设置下载的文件名，默认是'下载'
+	oA.href = c.toDataURL("image/png");
+	document.body.appendChild(oA);
+	oA.click();
+	oA.remove(); // 下载之后把创建的元素删除
+} 
+</script>
+
+</body>
+</html>
